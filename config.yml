@@ -1,0 +1,27 @@
+baseurl: https://www.sasaplus1.com
+
+defaultContentLanguage: ja
+
+disableHugoGeneratorInject: true
+
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+
+enableRobotsTXT: true
+
+footnoteReturnLinkContents: ↩
+
+hasCJKLanguage: true
+
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
+
+title: www.sasaplus1.com
+
+uglyUrls: true
