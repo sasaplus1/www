@@ -1,0 +1,13 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+  HUGO_VERSION = "0.55.6"
+
+[[redirects]]
+  force = true
+  from = "https://sasaplus1-www.netlify.com/*"
+  status = 301
+  to = "https://www.sasaplus1.com/:splat"
