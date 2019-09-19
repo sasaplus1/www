@@ -1,0 +1,26 @@
+version: '3.4'
+
+x-basic: &basic
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: sasaplus1/www
+  volumes:
+    - .:/var/www
+
+services:
+  build:
+    <<: *basic
+    command:
+      - hugo
+  new:
+    <<: *basic
+  serve:
+    <<: *basic
+    ports:
+      - '1313:1313'
+  sh:
+    <<: *basic
+    command:
+      - sh
+    tty: true
