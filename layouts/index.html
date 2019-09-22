@@ -6,13 +6,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ .Site.Title }}</title>
   </head>
-  <body>
-    <header>
-      <h1>{{ .Site.Title }}</h1>
+  <body class="index">
+    <header class="title">
+      <h1 class="title__heading">{{ .Site.Title }}</h1>
     </header>
     <main role="main">
+      <section class="social">
+        <h2 class="social__heading">social</h2>
+        <dl class="social__links">
+          <dl class="social__service">GitHub</dl>
+          <dd class="social__content">
+            <a class="social__link" href="https://github.com/sasaplus1">github.com/sasaplus1</a>
+          </dd>
+          <dl class="social__service">Twitter</dl>
+          <dd class="social__content">
+            <a class="social__link" href="https://twitter.com/sasaplus1">twitter.com/sasaplus1</a>
+          </dd>
+        </dl>
+      </section>
     </main>
-    <footer>
+    <footer class="copyright">
+      <small class="copyright__text">
+        <a class="copyright__link" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> &copy; 2019 sasa+1
+      </small>
     </footer>
   </body>
 </html>
