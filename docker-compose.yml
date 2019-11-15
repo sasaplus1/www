@@ -1,6 +1,6 @@
 version: '3.4'
 
-x-basic: &basic
+x-base: &base
   build:
     context: .
     dockerfile: Dockerfile
@@ -10,17 +10,17 @@ x-basic: &basic
 
 services:
   build:
-    <<: *basic
+    <<: *base
     command:
       - hugo
   new:
-    <<: *basic
+    <<: *base
   serve:
-    <<: *basic
+    <<: *base
     ports:
       - '1313:1313'
   sh:
-    <<: *basic
+    <<: *base
     command:
       - sh
     tty: true
