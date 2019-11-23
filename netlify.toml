@@ -1,10 +1,15 @@
 [build]
-  command = "hugo --gc --minify"
+  command = "yarn run netlify"
   publish = "public"
 
-[context.production.environment]
+[build.environment]
   HUGO_ENV = "production"
   HUGO_VERSION = "0.55.6"
+  # yarn is install modules without devDependencies when NODE_ENV is "production"
+  NODE_ENV = "development"
+  NODE_VERSION = "12.13.0"
+  YARN_FLAGS = "--ignore-optional --frozen-lockfile"
+  YARN_VERSION = "1.19.1"
 
 [[redirects]]
   force = true
