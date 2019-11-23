@@ -2,18 +2,38 @@
 @import "ress";
 
 .index {
+  @media (prefers-color-scheme: light) {
+    --theme-background-color: #fff;
+    --theme-border-color: #000;
+    --theme-color: #000;
+    --theme-focus-color: #9cf;
+    --theme-link-color: #36f;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --theme-background-color: #111;
+    --theme-border-color: #eee;
+    --theme-color: #eee;
+    --theme-focus-color: #6ff;
+    --theme-link-color: #3cf;
+  }
+
+  background-color: var(--theme-background-color);
+  border-color: var(--theme-border-color);
+  color: var(--theme-color);
+  font-family: 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
   margin: 0 auto;
   padding-left: 2rem;
   width: 800px;
 
   & a:link,
   & a:visited {
-    color: #36f;
+    color: var(--theme-link-color);
     text-decoration: none;
   }
 
   & a:focus {
-    box-shadow: 0 0 0 4px #9cf;
+    box-shadow: 0 0 0 3px var(--theme-focus-color);
     border-radius: 1px;
     outline: none;
   }
@@ -32,7 +52,7 @@
 
     & .diary {
       & .diary__heading {
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid;
           font-weight: normal;
       }
 
@@ -46,7 +66,7 @@
       margin-top: 2rem;
 
       & .social__heading {
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid;
         font-weight: normal;
       }
 
