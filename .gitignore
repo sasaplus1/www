@@ -107,4 +107,9 @@ hugo.linux
 
 
 ### www
+
+# stylelint cache
 .stylelintcache
+
+static/*
+!static/.gitkeep
