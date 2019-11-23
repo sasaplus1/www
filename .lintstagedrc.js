@@ -1,4 +1,5 @@
 module.exports = {
+  '*.css': 'npx stylelint --cache',
   '*.js': 'npx eslint --cache',
   'package.json': [
     'npx fixpack',
