@@ -111,5 +111,5 @@ hugo.linux
 # stylelint cache
 .stylelintcache
 
-static/*
-!static/.gitkeep
+# Building CSS with PostCSS
+static/*.css
