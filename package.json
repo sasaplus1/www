@@ -28,6 +28,10 @@
     "stylelint-config-standard": "^19.0.0",
     "stylelint-prettier": "^1.1.1"
   },
+  "engines": {
+    "node": "^12.13.0",
+    "yarn": "^1.19.1"
+  },
   "private": true,
   "scripts": {
     "build": "run-s build:*",
