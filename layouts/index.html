@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no,address=no,email=no">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ .Site.Title }}</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One&text={{ .Site.Title }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap?text={{ .Site.Title }}">
     <link rel="stylesheet" href="index.css">
     <link rel="alternate" type="application/xml+atom" title="{{ .Site.Title }}" href="index.xml">
   </head>
@@ -14,7 +14,7 @@
     <header class="title">
       <h1 class="title__heading">{{ .Site.Title }}</h1>
     </header>
-    <main role="main">
+    <main role="main" class="main">
       {{ .Content }}
     </main>
     <footer class="copyright">
