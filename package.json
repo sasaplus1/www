@@ -42,6 +42,8 @@
     "lint:js": "eslint --cache .",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
-    "sh": "docker-compose run --rm --service-ports sh"
+    "sh": "docker-compose run --rm --service-ports sh",
+    "watch": "run-p watch:*",
+    "watch:css": "yarn run build:css --watch"
   }
 }
