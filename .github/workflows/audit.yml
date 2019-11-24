@@ -20,9 +20,7 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           urls: |
-            https://deploy-preview-${PR}--sasaplus1-www.netlify.com
-        env:
-          PR: ${{ github.event.pull_request.number }}
+            https://deploy-preview-${{ github.event.pull_request.number }}--sasaplus1-www.netlify.com
       - uses: actions/upload-artifact@v1
         with:
           name: lighthouse-results
