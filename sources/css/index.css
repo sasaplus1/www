@@ -24,7 +24,11 @@
   font-family: 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
   margin: 0 auto;
   padding-left: 2rem;
-  width: 800px;
+  width: 100%;
+
+  @media only screen and (min-width: 800px) {
+    width: 800px;
+  }
 
   & a:link,
   & a:visited {
