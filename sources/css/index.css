@@ -21,7 +21,7 @@
   background-color: var(--theme-background-color);
   border-color: var(--theme-border-color);
   color: var(--theme-color);
-  font-family: 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
   margin: 0 auto;
   padding-left: 2rem;
   width: 100%;
