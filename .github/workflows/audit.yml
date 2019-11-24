@@ -1,0 +1,29 @@
+name: audit
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  audit:
+    name: audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: treosh/lighthouse-ci-action@v2
+        if: github.event_name == 'push'
+        with:
+          urls: |
+            https://www.sasaplus1.com
+      - uses: treosh/lighthouse-ci-action@v2
+        if: github.event_name == 'pull_request'
+        with:
+          urls: |
+            https://deploy-preview-${PR}--sasaplus1-www.netlify.com
+        env:
+          PR: ${{ github.event.pull_request.number }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: lighthouse-results
+          path: .lighthouseci
