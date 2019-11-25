@@ -14,11 +14,13 @@ jobs:
       - uses: treosh/lighthouse-ci-action@v2
         if: github.event_name == 'push'
         with:
+          configPath: .lighthouserc.json
           urls: |
             https://www.sasaplus1.com
       - uses: treosh/lighthouse-ci-action@v2
         if: github.event_name == 'pull_request'
         with:
+          configPath: .lighthouserc.json
           urls: |
             https://deploy-preview-${{ github.event.pull_request.number }}--sasaplus1-www.netlify.com
       - uses: actions/upload-artifact@v1
