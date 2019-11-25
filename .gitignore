@@ -116,3 +116,6 @@ static/*.css
 
 # Generate WebP with cwebp
 static/*.webp
+
+# Lighthouse CI
+.lighthouseci
