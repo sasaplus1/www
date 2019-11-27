@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-RUN apk --update add --no-cache hugo
+RUN apk --no-cache add hugo
 
 WORKDIR /var/www
 
