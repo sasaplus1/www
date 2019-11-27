@@ -54,12 +54,20 @@
   & .main {
     display: block;
 
-    & .diary {
-      & .diary__heading {
-          border-bottom: 1px solid;
-          font-weight: normal;
-      }
+    & .section {
+      margin-top: 2rem;
 
+      & .section__heading {
+        border-bottom: 1px solid;
+        font-weight: normal;
+      }
+    }
+
+    & .section:first-child {
+      margin-top: 0;
+    }
+
+    & .diary {
       & .diary__content {
         margin-left: 2rem;
         margin-top: 1rem;
@@ -67,13 +75,6 @@
     }
 
     & .social {
-      margin-top: 2rem;
-
-      & .social__heading {
-        border-bottom: 1px solid;
-        font-weight: normal;
-      }
-
       & .social__links {
         margin-left: 2rem;
         margin-top: 1rem;
