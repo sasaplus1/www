@@ -40,6 +40,11 @@
     box-shadow: 0 0 0 3px var(--theme-focus-color);
     border-radius: 1px;
     outline: none;
+    transition: box-shadow 0.2s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 
   & .title {
