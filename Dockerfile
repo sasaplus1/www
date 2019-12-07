@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-RUN apk --no-cache add hugo
+RUN apk --no-cache add hugo libwebp-tools
 
 WORKDIR /var/www
 
