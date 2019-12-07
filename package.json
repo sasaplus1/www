@@ -10,6 +10,7 @@
     ]
   },
   "devDependencies": {
+    "chokidar-cli": "^2.1.0",
     "eslint": "^6.7.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-node": "^10.0.0",
@@ -46,11 +47,12 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s bulid:assets build:css && hugo --gc --minify",
-    "postinstall": "npm_scripts/download-cwebp.sh \"$(npm prefix)\" || true",
+    "postinstall": "[ ! -f \"$(npm bin)/cwebp\" ] && npm_scripts/download-cwebp.sh \"$(npm prefix)\" || true",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
     "sh": "docker-compose run --rm --service-ports sh",
     "watch": "run-p watch:*",
+    "watch:assets": "chokidar 'static/**/*.png' -c 'yarn run build:assets'",
     "watch:css": "yarn run build:css --watch"
   }
 }
