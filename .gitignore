@@ -113,3 +113,6 @@ hugo.linux
 
 # Building CSS with PostCSS
 static/*.css
+
+# Generate WebP with cwebp
+static/*.webp
