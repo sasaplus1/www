@@ -17,6 +17,18 @@ __main() {
     exit 1
   fi
 
+  local bin=
+
+  bin="${root}/node_modules/.bin"
+
+  if [ -f "${bin}/cwebp" ]
+  then
+    printf -- 'cwebp is installed.\n'
+    exit 0
+  fi
+
+  printf -- 'Downloading cwebp...\n'
+
   local os=
 
   os="$(uname)"
@@ -53,14 +65,14 @@ __main() {
     exit 1
   fi
 
-  mkdir -p "${root}/node_modules/.bin"
+  mkdir -p "$bin"
 
-  tar xvfz "$file" -C "${root}/node_modules/.bin" --strip-components 2 '*/bin/cwebp' >/dev/null 2>&1
+  tar xvfz "$file" -C "$bin" --strip-components 2 '*/bin/cwebp' >/dev/null 2>&1
 
   rm -rf "${tempdir}"
 
-  printf -- '%s\n' "Extract to ${root}/node_modules/.bin/cwebp."
-  printf -- 'Complete.\n'
+  printf -- '%s\n' "Extract to ${bin}/cwebp."
+  printf -- 'Download finished.\n'
 }
 
 __main "$@"

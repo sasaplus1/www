@@ -47,7 +47,7 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s build:assets build:css && hugo --gc --minify",
-    "postinstall": "[ ! -f \"$(npm bin)/cwebp\" ] && npm_scripts/download-cwebp.sh \"$(npm prefix)\" || true",
+    "postinstall": "npm_scripts/download-cwebp.sh \"$(npm prefix)\" || true",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
     "sh": "docker-compose run --rm --service-ports sh",

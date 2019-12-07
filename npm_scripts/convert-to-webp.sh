@@ -13,9 +13,16 @@ __main() {
 
   if ! type cwebp >/dev/null 2>&1
   then
+    "$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)/download-cwebp.sh" "$(npm prefix)"
+  fi
+
+  if ! type cwebp >/dev/null 2>&1
+  then
     printf -- 'cwebp is not found.\n' >&2
     exit 1
   fi
+
+  printf -- 'Convert to webp...\n'
 
   local script='cwebp -q 80 "%" -o "$(printf -- "%" | sed -e "s|\.[^.]*$||").webp"'
 
@@ -24,6 +31,8 @@ __main() {
     -type d -name public -prune -or \
     -type f -iregex '.*\.png$' -print0 |
     xargs -0 -I % bash -c "$script"
+
+  printf -- 'Convert finished.\n'
 }
 
 __main "$@"
