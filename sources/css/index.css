@@ -74,7 +74,40 @@
       margin-top: 0;
     }
 
+    & .about {
+      & .about__defs {
+        margin-left: 2rem;
+        margin-top: 1rem;
+      }
+
+      & .about__term {
+        margin-top: 1rem;
+      }
+
+      & .about__term:first-child {
+        margin-top: 0;
+      }
+
+      & .about__desc {
+        margin-left: 2rem;
+      }
+
+      & .about__icon {
+        width: 72px;
+      }
+    }
+
     & .diary {
+      & .diary__links {
+        margin-left: 4rem;
+        margin-top: 1rem;
+      }
+
+      & .diary__item {
+        list-style-type: disc;
+        margin-bottom: 0.2rem;
+      }
+
       & .diary__content {
         margin-left: 2rem;
         margin-top: 1rem;
