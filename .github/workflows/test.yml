@@ -13,6 +13,8 @@ jobs:
           - 12
     runs-on: ubuntu-latest
     steps:
+      # NOTE: preinstall npm-script can download cwebp command, but disappear it.
+      - run: sudo apt --yes update && sudo apt --yes install webp
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
