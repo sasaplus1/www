@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
+    "cwebp-bin": "^5.1.0",
     "eslint": "^6.7.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-node": "^10.0.0",
@@ -36,7 +37,7 @@
   "private": true,
   "scripts": {
     "build": "run-s build:*",
-    "build:assets": "npm_scripts/convert-to-webp.sh \"$(npm prefix)\"",
+    "build:assets": "npm_scripts/convert-to-webp.sh \"$PWD\"",
     "build:css": "postcss ./sources/css/index.css -o static/index.css",
     "build:html": "docker-compose run --rm --service-ports build",
     "fix": "run-s fix:*",
@@ -47,7 +48,6 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s build:assets build:css && hugo --gc --minify",
-    "postinstall": "npm_scripts/download-cwebp.sh \"$(npm prefix)\" || true",
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
     "sh": "docker-compose run --rm --service-ports sh",

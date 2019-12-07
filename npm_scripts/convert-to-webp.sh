@@ -13,11 +13,6 @@ __main() {
 
   if ! type cwebp >/dev/null 2>&1
   then
-    "$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)/download-cwebp.sh" "$(npm prefix)"
-  fi
-
-  if ! type cwebp >/dev/null 2>&1
-  then
     printf -- 'cwebp is not found.\n' >&2
     exit 1
   fi
