@@ -135,6 +135,7 @@
   }
 
   & .copyright {
+    margin-bottom: 2rem;
     margin-top: 4rem;
 
     & .copyright__text {
