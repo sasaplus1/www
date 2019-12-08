@@ -12,6 +12,7 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: treosh/lighthouse-ci-action@v2
         with:
           configPath: .lighthouseciaction.json
@@ -26,6 +27,7 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: treosh/lighthouse-ci-action@v2
         with:
           configPath: .lighthouseciaction.json
