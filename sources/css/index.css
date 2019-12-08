@@ -97,20 +97,15 @@
       }
     }
 
-    & .diary {
-      & .diary__links {
+    & .blog {
+      & .blog__links {
         margin-left: 4rem;
         margin-top: 1rem;
       }
 
-      & .diary__item {
+      & .blog__item {
         list-style-type: disc;
-        margin-bottom: 0.2rem;
-      }
-
-      & .diary__content {
-        margin-left: 2rem;
-        margin-top: 1rem;
+        margin-bottom: 0.8rem;
       }
     }
 
