@@ -36,6 +36,7 @@
   },
   "private": true,
   "scripts": {
+    "audit": "npx -p @lhci/cli -c 'lhci autorun'",
     "build": "run-s build:*",
     "build:assets": "npm_scripts/convert-to-webp.sh \"$PWD\"",
     "build:css": "postcss ./sources/css/index.css -o static/index.css",
@@ -51,6 +52,7 @@
     "serve": "docker-compose run --rm --service-ports serve",
     "server": "run-s serve",
     "sh": "docker-compose run --rm --service-ports sh",
+    "test": "run-s lint audit",
     "watch": "run-p watch:*",
     "watch:assets": "chokidar 'static/**/*.png' -c 'yarn run build:assets'",
     "watch:css": "yarn run build:css --watch"
