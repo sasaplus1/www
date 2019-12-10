@@ -11,6 +11,9 @@
   YARN_FLAGS = "--ignore-optional --frozen-lockfile"
   YARN_VERSION = "1.19.1"
 
+[context.deploy-preview]
+  command = "HUGO_BASEURL=$DEPLOY_PRIME_URL yarn run netlify"
+
 [[redirects]]
   force = true
   from = "https://sasaplus1-www.netlify.com/*"
