@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
@@ -30,3 +28,10 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn run lint
       - run: yarn run build
+      - uses: treosh/lighthouse-ci-action@v2
+        with:
+          configPath: .lighthouserc.json
+      - uses: actions/upload-artifact@v1
+        with:
+          name: lighthouse-results
+          path: .lighthouseci

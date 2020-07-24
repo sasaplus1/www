@@ -7,18 +7,30 @@ on:
   pull_request:
 
 jobs:
-  audit:
-    name: audit
+  production:
+    name: audit production
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: treosh/lighthouse-ci-action@v2
-        if: github.event_name == 'push'
         with:
+          configPath: .lighthouseciaction.json
           urls: |
             https://www.sasaplus1.com
-      - uses: treosh/lighthouse-ci-action@v2
-        if: github.event_name == 'pull_request'
+      - uses: actions/upload-artifact@v1
         with:
+          name: lighthouse-results
+          path: .lighthouseci
+  staging:
+    name: audit staging
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: treosh/lighthouse-ci-action@v2
+        with:
+          configPath: .lighthouseciaction.json
           urls: |
             https://deploy-preview-${{ github.event.pull_request.number }}--sasaplus1-www.netlify.com
       - uses: actions/upload-artifact@v1
