@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
-    "cwebp-bin": "^5.1.0",
+    "cwebp-bin": "^6.0.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-node": "^11.0.0",
