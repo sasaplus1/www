@@ -7,5 +7,6 @@ module.exports = {
       }
     }
   ],
-  singleQuote: true
+  singleQuote: true,
+  trailingComma: 'none'
 };
