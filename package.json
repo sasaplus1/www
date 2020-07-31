@@ -54,6 +54,7 @@
     "server": "run-s serve",
     "watch": "run-p watch:*",
     "watch:assets": "chokidar 'static/**/*.png' -c 'yarn run build:assets'",
-    "watch:css": "yarn run build:css --watch"
+    "watch:css": "yarn run build:css --watch",
+    "watch:html": "hugo server"
   }
 }
