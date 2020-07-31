@@ -32,7 +32,7 @@
     "stylelint-prettier": "^1.1.1"
   },
   "engines": {
-    "node": ">=12",
+    "node": ">=14",
     "yarn": ">=1.22"
   },
   "private": true,
@@ -49,7 +49,7 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s build:assets build:css && hugo --gc --minify",
-    "postinstall": "[ -e \"$(npm bin)/hugo\" ] || npx github:sasaplus1/download-hugo 0.55.6 \"$(npm bin)\"",
+    "postinstall": "[ -e \"$(npm bin)/hugo\" ] || npx github:sasaplus1/download-hugo 0.74.3 \"$(npm bin)\"",
     "serve": "hugo server",
     "server": "run-s serve",
     "watch": "run-p watch:*",
