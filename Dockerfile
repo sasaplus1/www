@@ -1,7 +1,0 @@
-FROM alpine:3.12
-
-RUN apk --no-cache add hugo libwebp-tools
-
-WORKDIR /var/www
-
-CMD ["hugo", "server", "--bind", "0.0.0.0"]

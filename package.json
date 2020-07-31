@@ -31,15 +31,15 @@
     "stylelint-prettier": "^1.1.1"
   },
   "engines": {
-    "node": "^12.13.0",
-    "yarn": "^1.19.1"
+    "node": ">=12.13.0",
+    "yarn": ">=1.19.1"
   },
   "private": true,
   "scripts": {
     "build": "run-s build:*",
     "build:assets": "npm_scripts/convert-to-webp.sh \"$PWD\"",
     "build:css": "postcss ./sources/css/index.css -o static/index.css",
-    "build:html": "docker-compose run --rm --service-ports build",
+    "build:html": "hugo",
     "fix": "run-s fix:*",
     "fix:css": "stylelint --cache --fix sources/**/*.css",
     "fix:js": "eslint --cache --fix .",
@@ -48,9 +48,9 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s build:assets build:css && hugo --gc --minify",
-    "serve": "docker-compose run --rm --service-ports serve",
+    "postinstall": "[ -e \"$(npm bin)/hugo\" ] || npx github:sasaplus1/download-hugo 0.55.6 \"$(npm bin)\"",
+    "serve": "hugo server",
     "server": "run-s serve",
-    "sh": "docker-compose run --rm --service-ports sh",
     "watch": "run-p watch:*",
     "watch:assets": "chokidar 'static/**/*.png' -c 'yarn run build:assets'",
     "watch:css": "yarn run build:css --watch"
