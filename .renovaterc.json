@@ -1,7 +1,7 @@
 {
   "extends": [
     "config:base",
-    ":automergePatch",
+    ":automergeAll",
     ":label(renovate)",
     ":preserveSemverRanges",
     ":assignee(sasaplus1)",
