@@ -1,0 +1,35 @@
+name: lighthouse
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - id: website
+        run: |-
+          if [[ "$branch" =~ master$ ]]
+          then
+            echo "::set-output name=url::https://www.sasaplus1.com"
+          else
+            echo "::set-output name=url::https://deploy-preview-${number}--sasaplus1-www.netlify.app"
+          fi
+        env:
+          branch: ${{ github.refs }}
+          number: ${{ github.event.pull_request.number }}
+      - run: |-
+          while [[ "$(curl -Ls $url)" == 'Not Found' ]]
+          do
+            sleep 5
+          done
+        env:
+          url: ${{ steps.website.outputs.url }}
+      - uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: ${{ steps.website.outputs.url }}
+          uploadArtifacts: true
