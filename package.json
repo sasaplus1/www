@@ -32,8 +32,8 @@
     "stylelint-prettier": "^1.1.1"
   },
   "engines": {
-    "node": ">=12.13.0",
-    "yarn": ">=1.19.1"
+    "node": ">=14",
+    "yarn": ">=1.22"
   },
   "private": true,
   "scripts": {
@@ -49,11 +49,12 @@
     "lint:css": "stylelint --cache sources/**/*.css",
     "lint:js": "eslint --cache .",
     "netlify": "NODE_ENV=production run-s build:assets build:css && hugo --gc --minify",
-    "postinstall": "[ -e \"$(npm bin)/hugo\" ] || npx github:sasaplus1/download-hugo 0.55.6 \"$(npm bin)\"",
+    "postinstall": "[ -e \"$(npm bin)/hugo\" ] || npx github:sasaplus1/download-hugo 0.74.3 \"$(npm bin)\"",
     "serve": "hugo server",
     "server": "run-s serve",
     "watch": "run-p watch:*",
     "watch:assets": "chokidar 'static/**/*.png' -c 'yarn run build:assets'",
-    "watch:css": "yarn run build:css --watch"
+    "watch:css": "yarn run build:css --watch",
+    "watch:html": "hugo server"
   }
 }
