@@ -29,7 +29,7 @@ jobs:
           done
         env:
           url: ${{ steps.website.outputs.url }}
-      - uses: treosh/lighthouse-ci-action@v3
+      - uses: treosh/lighthouse-ci-action@v7
         with:
           urls: ${{ steps.website.outputs.url }}
           uploadArtifacts: true
